@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47567dedbef9cc641ae3aed5e457ed0a, type: 3}
-  m_Name: Trivia
+  m_Script: {fileID: 11500000, guid: a21ff6d7e68b4c24aad4c1d91fdfe4e6, type: 3}
+  m_Name: Sungai Amazon
   m_EditorClassIdentifier: 
-  sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  text: Trivia
-  canvasSubject: {fileID: 4798512192507796860, guid: 28dd72d2d97d1874c97d29cec5ce83e6, type: 3}
+  isTrue: 0

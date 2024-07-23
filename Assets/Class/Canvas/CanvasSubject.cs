@@ -1,6 +1,4 @@
-using UnityEngine;
-
-public abstract class CanvasSubject : MonoBehaviour
+public abstract class CanvasSubject : AbstractCanvas
 {
     
 }

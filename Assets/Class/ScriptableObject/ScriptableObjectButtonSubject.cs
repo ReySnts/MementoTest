@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = FilePath.SCRIPTABLE_OBJECT + FilePath.BUTTON_SUBJECT)]
+[CreateAssetMenu(fileName = FilePath.BUTTON_SUBJECT, menuName = FilePath.SCRIPTABLE_OBJECT + FilePath.BUTTON_SUBJECT)]
 
 public sealed class ScriptableObjectButtonSubject : ScriptableObject
 {
