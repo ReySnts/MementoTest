@@ -3,11 +3,11 @@ using UnityEngine;
 
 public abstract class AbstractList<TItem> : MonoBehaviour
 {
-    protected List<TItem> list = new();
+    [SerializeField] protected List<TItem> list = new();
 
     public List<TItem> List => list;
 
     protected abstract void Awake();
 
-    protected void OnDestroy() => list.Clear();
+    protected virtual void OnDestroy() => list.Clear();
 }

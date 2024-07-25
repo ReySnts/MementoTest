@@ -9,4 +9,6 @@ public static class FilePath
     public const string QUESTION = "Question";
 
     public const string QUESTION_OPTION = "QuestionOption";
+
+    public const string QUESTION_OPTION_SLASH = "QuestionOption/";
 }
