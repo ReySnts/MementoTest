@@ -1,11 +1,17 @@
+using System.Threading.Tasks;
 using UnityEngine;
 
 public abstract class AbstractLayoutGroup<TProduct> : MonoBehaviour
 {
-    private void Awake()
+    protected virtual async void Awake()
     {
         var abstractFactory = GetComponent<AbstractFactory<TProduct>>();
         var abstractList = GetComponent<AbstractList<TProduct>>();
-        abstractList.List.ForEach(action: product => abstractFactory.GetProduct(product));
+        await Task.Delay(millisecondsDelay: TaskDelay.MILLISECOND_20FPS);
+        abstractList.List.ForEach(action: product =>
+        {
+            if (destroyCancellationToken.IsCancellationRequested) return;
+            else abstractFactory.GetProduct(product);
+        });
     }
 }
