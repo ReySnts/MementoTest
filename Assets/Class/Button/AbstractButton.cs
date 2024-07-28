@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public abstract class AbstractButton : MonoBehaviour
 {
-    private Button button;
+    protected Button button;
 
     protected virtual void OnEnable()
     {
