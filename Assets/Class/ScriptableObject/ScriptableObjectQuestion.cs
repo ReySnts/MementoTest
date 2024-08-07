@@ -7,5 +7,7 @@ public sealed class ScriptableObjectQuestion : ScriptableObject
 {
     [Space(height: 20f), TextArea(minLines: 1, maxLines: 20)] public string text;
 
+    [Space(height: 20f)] public int totalCorrectAnswers;
+
     [Space(height: 20f)] public List<ScriptableObjectQuestionOption> optionList = new();
 }

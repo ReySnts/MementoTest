@@ -6,14 +6,14 @@ public sealed class ButtonSubject : AbstractButton
 {
     private IShareable<AbstractCanvas> iShareable;
 
-    private IStrategy<AbstractCanvas> iStrategy;
+    private AbstractContext<AbstractCanvas> canvasContext;
 
     protected override void OnEnable()
     {
         iShareable = GetComponent<IShareable<AbstractCanvas>>();
-        iStrategy = GetComponentInParent<IStrategy<AbstractCanvas>>();
+        canvasContext = GetComponentInParent<AbstractContext<AbstractCanvas>>();
         base.OnEnable();
     }
 
-    protected override void OnClick() => iStrategy.SetStrategy(strategy: iShareable.Data);
+    protected override void OnClick() => canvasContext.SetStrategy(strategy: iShareable.Data);
 }

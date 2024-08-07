@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public sealed class ButtonColorOnClick : AbstractButton
+public sealed class ButtonToggleColor : AbstractButtonToggle
 {
     [SerializeField] private Color clickedNormalColor;
 
@@ -16,8 +16,6 @@ public sealed class ButtonColorOnClick : AbstractButton
     private Color unclickedSelectedColor;
 
     private ColorBlock buttonColorBlock;
-
-    private bool buttonIsClicked = false;
 
     protected override void OnEnable()
     {
@@ -35,10 +33,10 @@ public sealed class ButtonColorOnClick : AbstractButton
 
     protected override void OnClick()
     {
-        buttonColorBlock.normalColor = buttonIsClicked ? unclickedNormalColor : clickedNormalColor;
-        buttonColorBlock.highlightedColor = buttonIsClicked ? unclickedHighlightedColor : clickedHighlightedColor;
-        buttonColorBlock.selectedColor = buttonIsClicked ? unclickedSelectedColor : clickedSelectedColor;
-        buttonIsClicked = !buttonIsClicked;
+        buttonColorBlock.normalColor = isActive ? unclickedNormalColor : clickedNormalColor;
+        buttonColorBlock.highlightedColor = isActive ? unclickedHighlightedColor : clickedHighlightedColor;
+        buttonColorBlock.selectedColor = isActive ? unclickedSelectedColor : clickedSelectedColor;
         button.colors = buttonColorBlock;
+        base.OnClick();
     }
 }

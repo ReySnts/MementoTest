@@ -8,7 +8,7 @@ public sealed class ProductCanvasQuestion : MonoBehaviour, IProduct<ScriptableOb
 
     public void Initialize(ScriptableObjectQuestion scriptableObjectQuestion)
     {
-        GetComponentInChildren<TextMeshProUGUI>().text = scriptableObjectQuestion.text;
+        transform.GetChild(index: 1).GetComponentInChildren<TextMeshProUGUI>().text = scriptableObjectQuestion.text;
         Data = scriptableObjectQuestion.optionList;
     }
 }

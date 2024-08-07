@@ -1,7 +1,13 @@
 using TMPro;
 using UnityEngine;
 
-public sealed class ProductButtonQuestionOption : MonoBehaviour, IProduct<ScriptableObjectQuestionOption>
+public sealed class ProductButtonQuestionOption : MonoBehaviour, IProduct<ScriptableObjectQuestionOption>, IShareable<ScriptableObjectQuestionOption>
 {
-    public void Initialize(ScriptableObjectQuestionOption scriptableObjectQuestionOption) => GetComponentInChildren<TextMeshProUGUI>().text = scriptableObjectQuestionOption.text;
+    public ScriptableObjectQuestionOption Data { get; private set; }
+
+    public void Initialize(ScriptableObjectQuestionOption scriptableObjectQuestionOption)
+    {
+        GetComponentInChildren<TextMeshProUGUI>().text = scriptableObjectQuestionOption.text;
+        Data = scriptableObjectQuestionOption;
+    }
 }

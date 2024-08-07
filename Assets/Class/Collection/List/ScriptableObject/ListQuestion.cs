@@ -17,6 +17,7 @@ public sealed class ListQuestion : ListScriptableObject<ScriptableObjectQuestion
     {
         question.optionList = new List<ScriptableObjectQuestionOption>(collection: Resources.LoadAll<ScriptableObjectQuestionOption>(path: FilePath.SCRIPTABLE_OBJECT + FilePath.QUESTION_OPTION_SLASH + question.name));
         question.optionList.ForEach(action: option => option.text = option.name);
+        question.totalCorrectAnswers = question.optionList.Where(predicate: option => option.isTrue == true).Count();
     });
 
     private void Randomize()
